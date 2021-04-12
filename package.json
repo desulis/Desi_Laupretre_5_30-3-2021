@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.0.0-beta3",
+    "bootstrap-icons": "^1.4.1"
+  },
+  "name": "livrables",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch scss:css"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
