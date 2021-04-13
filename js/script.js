@@ -9,9 +9,10 @@ request.onreadystatechange = function() {
         console.log(response);
         for (let i = 0; i < productsBear.length; i++) {
           const imageBear = productsBear[i].getElementsByTagName('img') [0]; 
-          console.log(imageBear); //test to take a good image
+          // console.log(imageBear); //test to take a good image
           imageBear.src = response[i].imageUrl;
-        
+          const urlBear = productsBear[i];
+          urlBear.setAttribute('href', 'Produit.html?id=' + response[i]._id);
           const nameBear = productsBear[i].getElementsByClassName('card-title') [0]; 
           nameBear.innerText = response[i].name;
         
