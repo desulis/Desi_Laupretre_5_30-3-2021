@@ -10768,5 +10768,12 @@ a.product-bear {
   justify-content: center;
   align-items: center;
 }
+input:invalid {
+  background-color: #fcfdec;
+}
+
+form:invalid .btn {
+  background-color: #dadada;
+}
 
 /*# sourceMappingURL=style.css.map */

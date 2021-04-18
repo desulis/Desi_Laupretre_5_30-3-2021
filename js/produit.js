@@ -1,10 +1,10 @@
-const idBear = window.location.search.replace("?id=", "");
+const idBear = window.location.search.replace("?id=", ""); // récupere l'id du produit dans l'url mais sans "?id=" 
 
-get("http://localhost:3000/api/teddies/" + idBear).then((response) => {
-    productChoosen(response);
+get("http://localhost:3000/api/teddies/" + idBear).then((teddy) => {
+    productChoosen(teddy); 
 }) 
 
-function productChoosen (response) {
+function productChoosen (teddy) {
     const productBear = document.querySelector('.product-bear');
     const imageBear = productBear.querySelector('img'); 
     const colorBear = productBear.querySelector('.card-color select') ; 
@@ -12,15 +12,15 @@ function productChoosen (response) {
     const priceBear = productBear.querySelector('.price-bear') ; 
     const descriptionBear = productBear.querySelector('.description-bear'); 
     const button = productBear.querySelector('a');
-    button.setAttribute('href', 'Panier.html?id=' + response._id); // url personalisé en rajoutant (?id=) 
-    imageBear.src = response.imageUrl;
-    nameBear.innerText = response.name;
-    priceBear.innerText = ("Price : " + (response.price / 100) + " €");
-    descriptionBear.innerText = response.description;    
-    for (let color of response.colors) {
-        var option = document.createElement('option');
+    button.setAttribute('href', 'Panier.html?id=' + teddy._id); // rajouté 'href' qui contient l'url personalisé en rajoutant (?id=) et _id de teddy choisi
+    imageBear.src = teddy.imageUrl;
+    nameBear.innerText = teddy.name;
+    priceBear.innerText = ("Price : " + (teddy.price / 100) + " €");
+    descriptionBear.innerText = teddy.description;    
+    for (let color of teddy.colors) {
+        const option = document.createElement('option'); // créer des éléments options
         option.textContent = color;
-        colorBear.appendChild(option);
+        colorBear.appendChild(option); // cette option met dans le parent qui a une classe .card-color après select (ligne 10)
     }
 }
   

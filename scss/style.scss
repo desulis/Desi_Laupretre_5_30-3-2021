@@ -39,3 +39,12 @@ a.product-bear {
 
     }
 }
+input:invalid {
+    background-color: #fcfdec;
+  }
+  
+form:invalid {
+    .btn {
+        background-color: rgb(218, 218, 218);
+    }
+}
