@@ -10768,12 +10768,37 @@ a.product-bear {
   justify-content: center;
   align-items: center;
 }
+.card .card-body p {
+  font-size: 12px;
+}
+
 input:invalid {
   background-color: #fcfdec;
 }
 
 form:invalid .btn {
   background-color: #dadada;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin-right: 0;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 480px) {
+  .form-group {
+    width: 100%;
+  }
+}
+.form-group .fas {
+  color: #020202;
+}
+
+.wrap-middle {
+  min-height: calc(100vh - 177px);
 }
 
 /*# sourceMappingURL=style.css.map */

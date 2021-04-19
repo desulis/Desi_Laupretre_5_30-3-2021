@@ -37,55 +37,59 @@
 			</div>
 		</div>
 		<!-- detail product choosen -->
-		<div class="container">
-			<h1 class="text-center">Votre Panier !</h1>
-			<div class="message-vide"></div>
-			<div class="row product-bear">
-				<div class="col-lg-4">
-					<div class="text-center">
-						<img class="card-img-top img-fluid" src="">
-					</div>
-				</div>
-				<div class="col-lg-4">
-						<div class="card-body">
-							<h5 class="card-title"></h5>
-							<p class="price-bear"></p>
-							<p class="description-bear"></p>
+		<div class="wrap-middle">
+			<div class="container  mt-4">
+				<h1 class="text-center">Votre Panier !</h1>
+				<h3 class="message-vide text-center mt-4"></h3>
+				<div class="row product-bear mx-auto mt-4">
+					<div class="col-lg-6">
+						<div class="text-center">
+							<img class="card-img-top img-fluid" src="">
 						</div>
-					
+					</div>
+					<div class="col-lg-6">
+							<div class="card-body">
+								<h5 class="card-title"></h5>
+								<p class="price-bear"></p>
+								<p class="description-bear"></p>
+							</div>
+						
+					</div>
 				</div>
-			</div>
-			<div class="row">
-				<h5>Votre Addresse de Livraison</h5>
-				<form id="myForm" onsubmit="order(event)">
-					<div>
-						<label for="firstname">Prénom : </label>
-						<input id="firstname" type="text" required>
-					</div>
-					<div>
-						<label for="lastname">Nom : </label>
-						<input id="lasttname" type="text" required>
-					</div>
-					<div>
-						<label for="addresse">Addresse : </label>
-						<input id="addresse" type="text" required>
-					</div>
-					<div>
-						<label for="city">City : </label>
-						<input id="city" type="text" required>
-					</div>
-					<div>
-						<label for="email">Email : </label>
-						<input id="email" type="email" required>
-					</div>
+				<div class="row">
+					<div class="col-lg-4 mx-auto mt-4">
+						<h5>Votre Addresse de Livraison</h5>
+						<form id="myForm" onsubmit="order(event)">
+							<div>
+								<label for="firstname">Prénom : </label>
+								<input id="firstname" class="form-control" placeholder="John" type="text" required>
+							</div>
+							<div>
+								<label for="lastname">Nom : </label>
+								<input id="lasttname" class="form-control" placeholder="Doe" type="text" required>
+							</div>
+							<div>
+								<label for="addresse">Addresse : </label>
+								<input id="addresse" class="form-control" placeholder="1 rue de Canggu" type="text" required>
+							</div>
+							<div>
+								<label for="city">City : </label>
+								<input id="city" class="form-control" placeholder="Pasadena 44000" type="text" required>
+							</div>
+							<div>
+								<label for="email">Email : </label>
+								<input id="email" class="form-control" placeholder="johndoe@xxxx.com" type="email" required>
+							</div>
 
-					<br>
-					<div>
-						<label>
-							<input class="btn btn-warning" type="submit" value="Commander" >
-						</label>
+							<br>
+							<div>
+								<label>
+									<input class="btn btn-warning" type="submit" value="Commander" >
+								</label>
+							</div>
+						</form>
 					</div>
-				</form>
+				</div>
 			</div>
 		</div>
         <!-- Footer -->
