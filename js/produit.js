@@ -1,18 +1,20 @@
 const idBear = window.location.search.replace("?id=", ""); // récupere l'id du produit dans l'url mais sans "?id=" 
+let objTeddy;
 
 get("http://localhost:3000/api/teddies/" + idBear).then((teddy) => {
     productChoosen(teddy); 
 }) 
 
 function productChoosen (teddy) {
+    objTeddy = teddy;
     const productBear = document.querySelector('.product-bear');
     const imageBear = productBear.querySelector('img'); 
     const colorBear = productBear.querySelector('.card-color select') ; 
     const nameBear = productBear.querySelector('.card-title') ; 
     const priceBear = productBear.querySelector('.price-bear') ; 
     const descriptionBear = productBear.querySelector('.description-bear'); 
-    const button = productBear.querySelector('a');
-    button.setAttribute('href', 'Panier.html?id=' + teddy._id); // rajouté 'href' qui contient l'url personalisé en rajoutant (?id=) et _id de teddy choisi
+    // const button = productBear.querySelector('a');
+    // button.setAttribute('href', 'Panier.html?id=' + teddy._id); // rajouté 'href' qui contient l'url personalisé en rajoutant (?id=) et _id de teddy choisi
     imageBear.src = teddy.imageUrl;
     nameBear.innerText = teddy.name;
     priceBear.innerText = ("Price : " + (teddy.price / 100) + " €");
@@ -23,6 +25,15 @@ function productChoosen (teddy) {
         colorBear.appendChild(option); // cette option met dans le parent qui a une classe .card-color après select (ligne 10)
     }
 }
+
+
+function addToCart() {
+    objTeddy.qty = 1;
+    const items = [objTeddy];
+    localStorage.setItem('items', JSON.stringify(items));
+    window.location.href = "Panier.html";
+}
+
 
 function up(max) {
     document.getElementById("myNumber").value = parseInt(document.getElementById("myNumber").value) + 1;

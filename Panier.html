@@ -41,21 +41,18 @@
 			<div class="container  mt-4">
 				<h1 class="text-center">Votre Panier !</h1>
 				<h3 class="message-vide text-center mt-4"></h3>
-				<div class="row product-bear mx-auto mt-4">
-					<div class="col-lg-6">
-						<div class="text-center">
-							<img class="card-img-top img-fluid" src="">
-						</div>
-					</div>
-					<div class="col-lg-6">
-							<div class="card-body">
-								<h5 class="card-title"></h5>
-								<p class="price-bear"></p>
-								<p class="description-bear"></p>
-							</div>
-						
-					</div>
-				</div>
+				<table class="table">
+					<thead class="thead-dark">
+						<tr>
+						  <th scope="col">Nom de produit</th>
+						  <th scope="col">Quantité</th>
+						  <th scope="col">Prix</th>
+						</tr>
+					  </thead>
+					  <tbody id="items-cart">
+							
+					  </tbody>
+				</table>
 				<div class="row">
 					<div class="col-lg-4 mx-auto mt-4">
 						<h5>Votre Addresse de Livraison</h5>

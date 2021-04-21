@@ -1,9 +1,9 @@
-function get(url) { // get = request method HTTP renvoie une Promise et la réponse est déjà parse
+function get(url) { // get = request method HTTP renvoie une Promise et la réponse est déjà parsé
 	return new Promise((resolve, reject) => {
 		let request = new XMLHttpRequest();
 		request.onreadystatechange = function() {
 			if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-				resolve(JSON.parse(this.responseText));
+				resolve(JSON.parse(this.responseText)); // parse : de XML en JSON
 			}
 		};
 		request.open("GET", url);
@@ -19,8 +19,8 @@ function post(url, jsonBody) {
 				resolve(JSON.parse(this.responseText));
 			}
 		};
-		request.open("POST", url);
-		request.setRequestHeader("Content-Type", "application/json");
-		request.send(JSON.stringify(jsonBody));
+		request.open("POST", url); //crée une ressource et envoi à url
+		request.setRequestHeader("Content-Type", "application/json"); // setRequestHeader : information pour le serveur pour le dire quel type de donné envoyé
+		request.send(JSON.stringify(jsonBody)); // JSON à string
 	}) 
 }
