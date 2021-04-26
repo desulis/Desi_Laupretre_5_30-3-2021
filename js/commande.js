@@ -1,18 +1,23 @@
-const parametres = window.location.search.replace("?", "").split("&");
-const idTeddy = parametres[0].replace("id=", "");
-const idCommande = parametres[1].replace("orderid=", "");
-const prixtotal = parametres[2].replace("price=", "");
+const parametres = window.location.search.replace("?", "").split("&"); //split by "&"
+const idCommande = parametres[0].replace("orderid=", "");
+const prixtotal = parametres[1].replace("price=", "");
 
-document.getElementById("numerocommande").textContent = idCommande;
-document.getElementById("prixtotal").textContent = prixtotal;
+const items = JSON.parse(localStorage.getItem('items'));
 
-get("http://localhost:3000/api/teddies/" + idTeddy).then((teddy) => {
-    commande(teddy); 
-}) 
-
-function commande(teddy) {
-	const teddyAchete = document.getElementById('teddy-achete');
-	const imageBear = teddyAchete.querySelector('img'); 
-	imageBear.src = teddy.imageUrl;
+let total = 0;
+for (let item of items) {
+	total += item.price * item.qty / 100;
 }
 
+document.getElementById("numerocommande").textContent = idCommande; //show the order's id
+document.getElementById("prixtotal").textContent = total; //the price total
+
+// function emptyCart () {
+//     if (items.length === 0) {        
+//         return items = []
+//     } 
+// }
+// function supprimer() {
+//     localStorage.setItem('items', JSON.stringify([]))
+//     return emptyCart()
+// }

@@ -1,4 +1,4 @@
-const idBear = window.location.search.replace("?id=", ""); // récupere l'id du produit dans l'url mais sans "?id=" 
+const idBear = window.location.search.replace("?id=", ""); //to take the id but without "?id=" 
 let objTeddy;
 
 get("http://localhost:3000/api/teddies/" + idBear).then((teddy) => {
@@ -13,16 +13,15 @@ function productChoosen (teddy) {
     const nameBear = productBear.querySelector('.card-title') ; 
     const priceBear = productBear.querySelector('.price-bear') ; 
     const descriptionBear = productBear.querySelector('.description-bear'); 
-    // const button = productBear.querySelector('a');
-    // button.setAttribute('href', 'Panier.html?id=' + teddy._id); // rajouté 'href' qui contient l'url personalisé en rajoutant (?id=) et _id de teddy choisi
+       
     imageBear.src = teddy.imageUrl;
     nameBear.innerText = teddy.name;
     priceBear.innerText = ("Price : " + (teddy.price / 100) + " €");
     descriptionBear.innerText = teddy.description;    
     for (let color of teddy.colors) {
-        const option = document.createElement('option'); // créer des éléments options
+        const option = document.createElement('option'); // create the element options
         option.textContent = color;
-        colorBear.appendChild(option); // cette option met dans le parent qui a une classe .card-color après select (ligne 10)
+        colorBear.appendChild(option); // this option put inside its parents that has a class (.card-color)
     }
 }
 
