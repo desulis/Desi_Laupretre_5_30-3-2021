@@ -38,20 +38,23 @@
 		</div>
 		<!-- detail product choosen -->
 		<div class="wrap-middle">
-			<div class="container  mt-4">
+			<div class="container mt-4">
 				<h1 class="text-center">Votre Panier !</h1>
 				<h3 class="message-vide text-center mt-4"></h3>
 				<table class="table">
 					<thead class="thead-dark">
 						<tr>
-						  <th scope="col">Nom de produit</th>
-						  <th scope="col">Quantité</th>
-						  <th scope="col">Prix</th>
+							<th scope="col">Nom de produit</th>
+							<th scope="col">Quantité</th>
+							<th scope="col">Prix</th>
 						</tr>
-					  </thead>
-					  <tbody id="items-cart">
-							
-					  </tbody>
+					</thead>
+					<tbody id="items-cart">
+						
+					</tbody>
+					<tbody class="mx-auto">
+						<button class="clear-cart btn btn-danger" onclick="supprimer">Clear Cart</button>
+					</tbody>
 				</table>
 				<div class="row">
 					<div class="col-lg-4 mx-auto mt-4">
@@ -114,5 +117,5 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 		<script src="js/request.js"></script>
 		<script src="js/panier.js"></script>
-    </body>
+	</body>
 </html>

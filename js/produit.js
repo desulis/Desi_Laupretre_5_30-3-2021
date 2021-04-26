@@ -28,12 +28,36 @@ function productChoosen (teddy) {
 
 
 function addToCart() {
-    objTeddy.qty = 1;
-    const items = [objTeddy];
-    localStorage.setItem('items', JSON.stringify(items));
+    objTeddy.qty = parseInt(document.getElementById('myNumber').value);
+    const items = JSON.parse(localStorage.getItem('items') || '[]'); //get the current list, if null : create an empty array
+    let found = false
+    for (let item of items) {
+        if(item._id === objTeddy._id) { // if we find the same id 
+            item.qty += objTeddy.qty
+            found = true
+        }
+    }
+    if (found === false) { // if not 'push'
+        items.push(objTeddy)
+    }
+
+    // items.push(objTeddy); //add another product
+    localStorage.setItem('items', JSON.stringify(items)); // set or save the new list
     window.location.href = "Panier.html";
 }
 
+// function deleteItems() {
+    
+//     for(let cart in addTocart()) {
+//         if(addToCart[items].id === totalQty) {
+//             cart[item].count --;
+//             if(cart[item].count === 0) {
+//                 cart.splice(item, 1);
+//             }
+//         break;
+//         }
+//     }
+// }
 
 function up(max) {
     document.getElementById("myNumber").value = parseInt(document.getElementById("myNumber").value) + 1;

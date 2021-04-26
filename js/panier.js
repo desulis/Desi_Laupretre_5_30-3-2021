@@ -3,25 +3,14 @@
 const items = JSON.parse(localStorage.getItem('items'));
 console.log(items);
 
-if (items.length === 0) {
-    const messageVide = document.querySelector('.message-vide');
-    messageVide.textContent = "Votre panier est vide !";
-} // si l'utilisateur n'a pas ajouté un produit dans le panier mais ils vont dans l'icon navigation Panier, affiche un message "Votre panier est vide"
+function emptyCart () {
+    if (items.length === 0) {
+        const messageVide = document.querySelector('.message-vide');
+        messageVide.textContent = "Votre panier est vide !";
+    } 
+}
+// si l'utilisateur n'a pas ajouté un produit dans le panier mais ils vont dans l'icon navigation Panier, affiche un message "Votre panier est vide"
 const table = document.getElementById('items-cart');
-
-// function addRow (name, qty, price){
-//     const tr = document.createElement("tr");
-//     const td = document.createElement("td");
-//     const td1 = document.createElement("td");
-//     const td2 = document.createElement("td");
-//     td.textContent = name;
-//     td1.textContent = qty;
-//     td2.textContent = price / 100 + " €";
-//     table.appendChild(tr);
-//     tr.appendChild(td);
-//     tr.appendChild(td1);
-//     tr.appendChild(td2);
-// }
 
 function addRow(values) {
     const tr = document.createElement("tr");
@@ -43,17 +32,14 @@ for (let item of items) {
 
 addRow(["Total", totalQty, (total/100)+ " €"]);
 
-function cart (teddy) {
-    const productBear = document.querySelector('.product-bear')
-    const imageBear = productBear.querySelector('img'); 
-    const nameBear = productBear.querySelector('.card-title') ; 
-    const priceBear = productBear.querySelector('.price-bear') ; 
-    const descriptionBear = productBear.querySelector('.description-bear'); 
-    imageBear.src = teddy.imageUrl;
-    nameBear.innerText = teddy.name;
-    priceBear.innerText = ("Price : " + (teddy.price / 100) + " €");
-    descriptionBear.innerText = teddy.description; 
+const del = document.querySelector('.clear-cart')
+del.addEventListener('click', supprimer)
+
+function supprimer() {
+    localStorage.setItem('items', JSON.stringify([]))
+    return emptyCart()
 }
+
 // fonction lors submit un formulaire
 function order (event) {
     event.preventDefault(); 
