@@ -1,19 +1,86 @@
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
+$color-netral : #ffff;
+$color-primary : rgb(0, 0, 0);
+$color-secondaire : pink;
+$btn-color : rgb(255, 62, 143);
+$invalid-color :rgb(212, 176, 191);
+
+
+h2{
+    font-family: 'Orelega+One';
+}
+
+.header-pink {
+    background-color: $color-secondaire;
+}
+
+.row-header {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.footer-pink {
+    background-color: $color-secondaire;
+}
+
 .shop-name {
     font-family: "Walter Turncoat";
+    font-size: 35px;
+    text-decoration: none;
+    text-align: center;
+    margin: none;
 }
 .navbar-brand {
     gap: 15px;
-
+    justify-content: center;
+    align-items: center;
+    .bi {
+        text-decoration: none;
+        text-align: center;
+        margin: none;
+        font-size: 30px;
+    }
 }
+
+.navbar-nav {
+    gap: 10px;
+    li {
+        color: $color-primary;
+    }
+}
+
+.navbar-toggler {
+    background-color: $color-secondaire;
+    border-color: #020202;
+    color: #020202;
+}
+
+.carousel-inner {
+    width: 100%;
+    height: 700px;
+    @media screen {
+        height: fit-content;
+    }
+    .carousel-item img {
+        width: 100%;
+        height: 700px;
+        @media (max-width: 480px) {
+            height: auto;
+        }
+    }
+}
+
 a {
-    color: #ffff;
+    color: $color-primary;
     text-decoration: none;
 }
+
 a.product-bear {
-    color: black;
+    color: $color-primary;
 }
+
 .btn.btn-circle  {
     width: 70px;
     height: 70px;
@@ -21,11 +88,18 @@ a.product-bear {
     font-size: 50px;
     line-height: 1.33;
 }
+
 .card {
+    border-style: solid $color-secondaire 10px;
+    border-radius: 20px;
     display: flex;
     gap: 30px;
     width: 100%;
     height: 500px;
+    transition: transform 350ms;
+    &:hover {
+        transform: scale(1.02);
+    }
     .card-img-top {
         flex: 4;
         width: 100%;
@@ -34,11 +108,36 @@ a.product-bear {
         object-position: 50% 50%;
         justify-content: center;
         align-items: center;
+        border-radius: 20px 20px 0 0;
     }
-    .card-body p {
-        font-size: 12px;
+    .card-body {
+        background-color:$color-secondaire;
+        border-radius: 0 0 20px 20px;
+        p {
+            font-family: 'Orelega+One';
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
     }
 }
+
+.btn-cart {
+    font-family: 'Roboto' ;
+    font-weight: 300;
+    color: $color-netral;
+    background-color: $btn-color;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    box-shadow: 0px 10px 20px rgb(170, 170, 170);
+    transform: scale(1);
+    transition: transform 200ms;
+    &:hover {
+        transform: scale(1.12);
+        background-image:linear-gradient(to bottom right, #fa94dd, #e749f5);
+    } 
+}
+
 input:invalid {
     background-color: #fcfdec;
   }
@@ -67,4 +166,3 @@ $quantity-btn-color: #020202;
 .wrap-middle {
     min-height: calc(100vh - 177px);
 }
-

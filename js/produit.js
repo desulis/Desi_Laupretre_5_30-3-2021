@@ -5,6 +5,7 @@ get("http://localhost:3000/api/teddies/" + idBear).then((teddy) => {
     productChoosen(teddy); 
 }) 
 
+//for every choosen teddy from the home page will redirect to a page with more detail
 function productChoosen (teddy) {
     objTeddy = teddy;
     const productBear = document.querySelector('.product-bear');

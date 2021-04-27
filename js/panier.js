@@ -29,10 +29,11 @@ function emptyCart () {
         messageVide.textContent = "Votre panier est vide !";
         table.innerText= "" //erase the table with its value when the button clear pressed
         const form = document.querySelector('.formulaire')
-        form.innerText= ""
-
+        form.innerText= "" //unshow the form when the cart is empty
     } 
 }
+
+emptyCart () //call the function when cart is empty
 
 //the clear button to reset the cart
 const del = document.querySelector('.clear-cart')
@@ -47,7 +48,7 @@ function supprimer() {
 // submit the filled form
 function order (event) {
     event.preventDefault(); 
-    const tableId = []
+    const tableId = [] //
     for(let idItems of items){
         tableId.push(idItems._id)
     }
