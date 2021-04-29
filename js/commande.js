@@ -5,6 +5,7 @@ const prixtotal = parametres[1].replace("price=", "");
 const items = JSON.parse(localStorage.getItem('items'));
 
 let total = 0; //count the total price
+
 for (let item of items) {
 	total += item.price * item.qty / 100;
 }
